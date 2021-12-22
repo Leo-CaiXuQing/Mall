@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Mall.IService\Mall.IService.csproj" />
+    <ProjectReference Include="..\Mall.Model\Mall.Model.csproj" />
+  </ItemGroup>
+
+</Project>

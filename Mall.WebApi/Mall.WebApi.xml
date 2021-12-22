@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Mall.WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:Mall.WebApi.ApiGroup.ApiGroupAttribute.#ctor(Mall.WebApi.ApiGroup.ApiGroupNames)">
+            <summary>
+            系统分组特性
+            </summary>
+        </member>
+        <member name="T:Mall.WebApi.ApiGroup.ApiGroupNames">
+            <summary>
+            系统分组枚举
+            </summary>
+        </member>
+        <member name="T:Mall.WebApi.ApiGroup.GroupInfoAttribute">
+            <summary>
+            系统接口相关说明
+            </summary>
+        </member>
+        <member name="M:Mall.WebApi.Controllers.AuthController.Login(Mall.Model.Dtos.LoginDto)">
+            <summary>
+            登录账号
+            </summary>
+            <param name="loginDto">用户名</param> 
+            <returns></returns>
+        </member>
+        <member name="M:Mall.WebApi.Controllers.LeoController.Get">
+            <summary>
+            个人信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Mall.WebApi.Controllers.UserController.GetUserById(System.Int32)">
+            <summary>
+            按Id查询用户信息
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mall.WebApi.Controllers.UserController.GetUsers">
+            <summary>
+            获取所有用户
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Mall.WebApi.Controllers.UserController.GetUserInfo">
+            <summary>
+            查询用户资料
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Mall.WebApi.Utility.ConsulService.ConsulRegister(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            服务注册中心
+            </summary>
+            <param name="configuration"></param>
+        </member>
+    </members>
+</doc>

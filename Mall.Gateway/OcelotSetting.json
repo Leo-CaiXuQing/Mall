@@ -1,0 +1,168 @@
+{
+  //*********************************单地址服务******************************** 
+  //"Routes": [
+  //  {
+  //    //Upstream表示上游请求,即客户端请求道API Gatway 
+  //    "UpstreamPathTemplate": "/service/{url}", //请求路径模板 --service 自己定义的路由名字  --url变量 //冲突的还还可以加权重Priority  
+  //    "UpstreamHttpMethod": [ "GET", "POST", "HEAD", "PUT", "PUTCH", "DELETE", "OPTIONS" ], //请求方法数组
+  //    //"UseServiceDiscovery": false, //启动服务发现
+  //    //Downstream表示下游
+  //    "DownstreamPathTemplate": "/api/{url}", //服务地址模板--url变量
+  //    "DownstreamScheme": "http", //请求协议，目前可以支持https/http
+  //    "DownstreamHostAndPorts": [ //请求服务地址
+  //      {
+  //        "Host": "localhost",
+  //        "Port": 12346 //服务端口
+  //      }
+  //    ]
+  //  }
+  //]
+
+  //*********************************多地址服务********************************
+  //"Routes": [
+  //  {
+  //    //Downstream表示下游
+  //    "DownstreamPathTemplate": "/api/{url}", //服务地址模板--url变量
+  //    "DownstreamScheme": "http", //请求协议，目前可以支持https/http
+  //    "DownstreamHostAndPorts": [ //请求服务地址
+  //      {
+  //        "Host": "localhost",
+  //        "Port": 12346 //服务端口
+  //      }
+  //    ],
+  //    //Upstream表示上游请求,即客户端请求道API Gatway 
+  //    "UpstreamPathTemplate": "/service1/{url}", //请求路径模板 --url变量 //冲突的还还可以加权重Priority
+  //    "UpstreamHttpMethod": [ "GET", "POST", "HEAD", "PUT", "PUTCH", "DELETE", "OPTIONS" ], //请求方法数组
+  //    "UseServiceDiscovery": false //启动服务发现
+  //  },
+  //  {
+  //    //Downstream表示下游
+  //    "DownstreamPathTemplate": "/api/{url}", //服务地址模板--url变量
+  //    "DownstreamScheme": "http", //请求协议，目前可以支持https/http
+  //    "DownstreamHostAndPorts": [ //请求服务地址
+  //      {
+  //        "Host": "localhost",
+  //        "Port": 12347 //服务端口
+  //      }
+  //    ],
+  //    //Upstream表示上游请求,即客户端请求道API Gatway 
+  //    "UpstreamPathTemplate": "/service2/{url}", //请求路径模板 --url变量 //冲突的还还可以加权重Priority
+  //    "UpstreamHttpMethod": [ "GET", "POST", "HEAD", "PUT", "PUTCH", "DELETE", "OPTIONS" ], //请求方法数组
+  //    "UseServiceDiscovery": false //启动服务发现
+  //  },
+  //  {
+  //    //Downstream表示下游
+  //    "DownstreamPathTemplate": "/api/{url}", //服务地址模板--url变量
+  //    "DownstreamScheme": "http", //请求协议，目前可以支持https/http
+  //    "DownstreamHostAndPorts": [ //请求服务地址
+  //      {
+  //        "Host": "localhost",
+  //        "Port": 12348 //服务端口
+  //      }
+  //    ],
+  //    //Upstream表示上游请求,即客户端请求道API Gatway 
+  //    "UpstreamPathTemplate": "/service3/{url}", //请求路径模板 --url变量 //冲突的还还可以加权重Priority
+  //    "UpstreamHttpMethod": [ "GET", "POST", "HEAD", "PUT", "PUTCH", "DELETE", "OPTIONS" ], //请求方法数组
+  //    "UseServiceDiscovery": false //启动服务发现
+  //  }
+  //]
+
+  //*********************************单地址多服务负载均衡********************************
+  //"Routes": [
+  //  {
+  //    //Upstream表示上游请求,即客户端请求道API Gatway 
+  //    "UpstreamPathTemplate": "/service/{url}", //请求路径模板 --service 自己定义的路由名字  --url变量 //冲突的还还可以加权重Priority  
+  //    "UpstreamHttpMethod": [ "GET", "POST", "HEAD", "PUT", "PUTCH", "DELETE", "OPTIONS" ], //请求方法数组
+  //    //"UseServiceDiscovery": false, //启动服务发现
+  //    //Downstream表示下游
+  //    "DownstreamPathTemplate": "/api/{url}", //服务地址模板--url变量
+  //    "DownstreamScheme": "http", //请求协议，目前可以支持https/http
+  //    "DownstreamHostAndPorts": [ //请求服务地址
+  //      {
+  //        "Host": "localhost", //服务地址
+  //        "Port": 12346 //服务端口
+  //      },
+  //      {
+  //        "Host": "localhost", //服务地址
+  //        "Port": 12347 //服务端口
+  //      },
+  //      {
+  //        "Host": "localhost", //服务地址
+  //        "Port": 12348 //服务端口
+  //      }
+  //    ],
+  //    "LoadBalancerOptions": {
+  //      "type": "RoundRobin" //轮询 可以配置：LeastConnection-最少连接数的服务器 NoLoadBalance-不负载均衡 
+  //    }
+  //  }
+  //]
+
+  //*********************************单地址多服务负载均衡+Consul********************************
+  //"Routes": [
+  //  {
+  //    //Upstream表示上游请求,即客户端请求道API Gatway 
+  //    "UpstreamPathTemplate": "/service/{url}", //请求路径模板 --service 自己定义的路由名字  --url变量 //冲突的还还可以加权重Priority  
+  //    "UpstreamHttpMethod": [ "GET", "POST", "HEAD", "PUT", "PUTCH", "DELETE", "OPTIONS" ], //请求方法数组 
+  //    //Downstream表示下游
+  //    "DownstreamPathTemplate": "/api/{url}", //服务地址模板--url变量
+  //    "DownstreamScheme": "http", //请求协议，目前可以支持https/http 
+  //    "UseServiceDiscovery": true, //启动服务发现
+  //    "ServiceName": "Mall", //Consul服务名称
+  //    "LoadBalancerOptions": {
+  //      "type": "RoundRobin" //轮询 可以配置：LeastConnection-最少连接数的服务器 NoLoadBalance-不负载均衡 
+  //    }
+  //  }
+  //],
+  //"GlobalConfiguration": {
+  //  "BaseUrl": "http://localhost:12321", //网关对外地址
+  //  "ServiceDiscoveryProvider": {
+  //    "Host": "localhost",
+  //    "Port": 8500,
+  //    "Type": "Consul" //由Consul注册发现
+  //  }
+  //}
+
+  //*********************************单地址多服务负载均衡+Consul+Polly********************************
+  "Routes": [
+    {
+      //Upstream表示上游请求,即客户端请求道API Gatway 
+      "UpstreamPathTemplate": "/service/{url}", //请求路径模板 --service 自己定义的路由名字  --url变量 //冲突的还还可以加权重Priority  
+      "UpstreamHttpMethod": [ "GET", "POST", "HEAD", "PUT", "PUTCH", "DELETE", "OPTIONS" ], //请求方法数组 
+      //Downstream表示下游
+      "DownstreamPathTemplate": "/api/{url}", //服务地址模板--url变量
+      "DownstreamScheme": "http", //请求协议，目前可以支持https/http 
+      "UseServiceDiscovery": true, //启动服务发现
+      "ServiceName": "Mall", //Consul服务名称
+      "LoadBalancerOptions": {
+        "type": "RoundRobin" //轮询方式访问,可以配置：LeastConnection-最少连接数的服务器 NoLoadBalance-不负载均衡 
+      },
+      "RateLimitOptions": {
+        "ClientWhitelist": [], //白名单
+        "EnableRateLimiting": true, //允许限流
+        "Period": "5m", //1s 5m 1h 1d
+        "Limit": 5, //时间段内允许的最大请求数 
+        "PeriodTimespan": 60 //限流后多少秒后可以重连
+      },
+      //"FileCacheOptions": {
+      //  "TtlSeconds": 10 //做缓存,缓存时间为10m
+      //},
+      "QosOptions": { //如果服务实例已经无法响应挂了，重试之后直接返回错误，不需要再去等待请求
+        "ExceptionsAllowedBeforeBreaking": 3, //允许多少个异常请求
+        "DurationOfBreak": 10000, //熔断的时间,单位为ms
+        "TimeoutValue": 10000 //如果下游请求的处理时间超过多少则将请求设置为超时 默认90秒
+      }
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:12321", //网关对外地址
+    "ServiceDiscoveryProvider": {
+      "Host": "localhost",
+      "Port": 8500,
+      "Type": "Consul" //由Consul注册发现
+    },
+    "RateLimitOptions": {
+      "QuotaExceededMessage": "Too many requests,Try again later!", //当请求过载被截断时返回的消息
+      "HttpStatusCode": 404 //当请求过载被截断时返回的http status
+    }
+  }
+}
