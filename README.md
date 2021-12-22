@@ -1,5 +1,6 @@
 # Mall
-一个简单的C#微服务代码,包含使用Consul,Ocelot,Polly等
+一个简单的C#微服务代码,包含使用Consul,Ocelot,Polly等.
+
 1.请先运行Consul  ，否则无法注册发现API命令： consul.exe agent -dev
 Consul本地地址演示：http://localhost:8500/ui/dc1/services
 
